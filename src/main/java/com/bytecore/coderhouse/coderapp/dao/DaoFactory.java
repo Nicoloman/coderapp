@@ -1,4 +1,4 @@
-package  com.bytecore.coderhouse.coderapp.dao;
+package com.bytecore.coderhouse.coderapp.dao;
 
 import org.springframework.stereotype.Service;
 
@@ -9,18 +9,13 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
-
-
-
 @Service
 public class DaoFactory {
 
+	@PersistenceContext
+	private EntityManager em;
 
-    @PersistenceContext
-    private EntityManager em;
-    
-
-    @Transactional
+	@Transactional
 	public void persistirAlumno(Alumno alumno) {
 		em.persist(alumno);
 	}

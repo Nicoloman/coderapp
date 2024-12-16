@@ -31,7 +31,12 @@ public class Curso {
 			)
 	private List<Alumno> alumnos = new ArrayList<>();
 
+	public Curso() {
+		super();
+	}
+	
 	public Curso(String nombre) {
+		this();
 		this.nombre = nombre;
 	}
 

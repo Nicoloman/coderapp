@@ -36,12 +36,19 @@ public class Alumno {
 
 	private LocalDateTime createdAt;
 
-    public Alumno(String nombre, String apellido,  int dni, String legajo) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
+	public Alumno() {
+		super();
+	}
+	
+	public Alumno(String nombre, String apellido, int dni, String legajo) {
+		this();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
 		this.legajo = legajo;
-    }
+	}
+
+
 
 	public Long getId() {
 		return id;
