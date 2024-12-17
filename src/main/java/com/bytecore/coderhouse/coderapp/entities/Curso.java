@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,6 +23,9 @@ public class Curso {
 	private long id;
 
 	private String nombre;
+
+	@ManyToOne()
+	private Categoria categoria;
 
 	@ManyToMany(fetch =FetchType.EAGER)
 	@JoinTable(
@@ -68,5 +72,13 @@ public class Curso {
 	public String toString() {
 		return "Curso [id=" + id + ", nombre=" + nombre + ", alumnos=" + alumnos + "]";
 	}
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
 }
